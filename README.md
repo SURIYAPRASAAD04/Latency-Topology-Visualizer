@@ -58,7 +58,7 @@ Create a `.env` file in the root directory and add your configuration:
 # MongoDB connection string, API keys, etc.
 ```
 
-> **Note**: Contact the project maintainer for the complete environment configuration file.
+> **Note**: please find the Access Credentials attached to email.
 
 ### 4. Start MongoDB
 
