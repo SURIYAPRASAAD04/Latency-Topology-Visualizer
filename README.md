@@ -2,7 +2,7 @@
 
 A comprehensive network monitoring and visualization dashboard that provides real-time latency analysis, 3D globe visualization, and network topology mapping for cloud providers and exchange servers.
 
-## 🌟 Features
+##  Features
 
 - **3D Globe Monitoring**: Interactive 3D visualization of global network connections and latency
 - **Network Topology Visualization**: Dynamic network graph showing connections between servers
@@ -11,7 +11,7 @@ A comprehensive network monitoring and visualization dashboard that provides rea
 - **Exchange & Provider Management**: Manage cloud providers and exchange servers
 - **Real-time Data**: Live latency monitoring and updates
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Frontend
 - **Next.js** for effective and innovative user interface
@@ -26,7 +26,7 @@ A comprehensive network monitoring and visualization dashboard that provides rea
 - **Real-time data processing** and latency monitoring
 - **RESTful API** endpoints
 
-## 📋 Prerequisites
+##  Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed:
 - **MongoDB** (v6.0 or higher)
 - **npm** (comes with Node.js)
 
-## 🚀 Installation
+##  Installation
 
 ### 1. Clone the Repository
 
@@ -103,14 +103,14 @@ npm run build
 npm start
 ```
 
-## 🌐 Accessing the Dashboard
+##  Accessing the Dashboard
 
 Open your web browser and navigate to:
 ```
 http://localhost:5173
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ├── public/                 # Static assets
