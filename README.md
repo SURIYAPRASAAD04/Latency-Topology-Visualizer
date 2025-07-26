@@ -138,7 +138,7 @@ http://localhost:5173
 └── README.md            # Project documentation
 ```
 
-## 🔧 Available Scripts
+##  Available Scripts
 
 | Command | Description |
 |---------|-------------|
@@ -148,7 +148,7 @@ http://localhost:5173
 | `npm run build` | Build the application for production |
 | `npm start` | Start the production server |
 
-## 📊 Dashboard Pages
+##  Dashboard Pages
 
 ### 1. Main Dashboard - 3D Globe Monitoring
 - Interactive 3D globe visualization
@@ -201,4 +201,4 @@ http://localhost:5173
 - Figma
 
 
-**Note**: This application requires proper environment configuration. Contact the project maintainer for access credentials and detailed setup instructions.
+**Note**: This application requires proper environment configuration.
