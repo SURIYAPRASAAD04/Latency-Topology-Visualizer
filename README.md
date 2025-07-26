@@ -82,8 +82,8 @@ net start MongoDB
 npm run dev:full
 ```
 This starts both frontend and backend servers:
-- Frontend: http://localhost:5173
-- Backend API: http://localhost:3000
+- Frontend: http://localhost:4028
+- Backend API: http://localhost:5000
 
 #### Alternative Commands
 
@@ -187,18 +187,18 @@ http://localhost:5173
 - Vite
 - Tailwind CSS
 - Three.js
-- D3.js
 - Recharts
 
 **Backend:**
 - Node.js
 - MongoDB
-- Mongoose
 
 **Development Tools:**
 - PostCSS
 - ESLint
 - Vite
+- Postman
+- Figma
 
 
 **Note**: This application requires proper environment configuration. Contact the project maintainer for access credentials and detailed setup instructions.
