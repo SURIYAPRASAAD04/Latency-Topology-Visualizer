@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #0A0A0A; /* near-black */
+    --color-foreground: #FFFFFF; /* white */
+    --color-border: rgba(0, 255, 136, 0.3); /* neon-green-30 */
+    --color-input: #1A1A1A; /* elevated-dark-gray */
+    --color-ring: #00FF88; /* neon-green */
+    
+    /* Card & Surface Colors */
+    --color-card: #1A1A1A; /* elevated-dark-gray */
+    --color-card-foreground: #FFFFFF; /* white */
+    --color-popover: #1A1A1A; /* elevated-dark-gray */
+    --color-popover-foreground: #FFFFFF; /* white */
+    
+    /* Muted Colors */
+    --color-muted: #1A1A1A; /* elevated-dark-gray */
+    --color-muted-foreground: #B3B3B3; /* light-gray */
+    
+    /* Primary Brand Colors */
+    --color-primary: #00FF88; /* neon-green */
+    --color-primary-foreground: #0A0A0A; /* near-black */
+    
+    /* Secondary Colors */
+    --color-secondary: #00CC6A; /* darker-green */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #00FFFF; /* cyan */
+    --color-accent-foreground: #0A0A0A; /* near-black */
+    
+    /* State Colors */
+    --color-success: #00FF88; /* neon-green */
+    --color-success-foreground: #0A0A0A; /* near-black */
+    
+    --color-warning: #FFB800; /* amber */
+    --color-warning-foreground: #0A0A0A; /* near-black */
+    
+    --color-error: #FF3366; /* neon-pink-red */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #FF3366; /* neon-pink-red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Cyberpunk Specific Colors */
+    --color-neon-glow: rgba(0, 255, 136, 0.5); /* neon-green-50 */
+    --color-surface-elevated: #2A2A2A; /* elevated-surface */
+    --color-text-secondary: #B3B3B3; /* light-gray */
+    
+    /* Animation Variables */
+    --animation-duration-fast: 150ms;
+    --animation-duration-normal: 300ms;
+    --animation-duration-slow: 500ms;
+    --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography Classes */
+  .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+  
+  .font-jetbrains-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Cyberpunk Effects */
+  .neon-glow {
+    box-shadow: 0 0 20px var(--color-neon-glow);
+  }
+  
+  .neon-border {
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 0 10px var(--color-neon-glow);
+  }
+  
+  .glass-panel {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+  }
+  
+  /* Animation Classes */
+  .pulse-ambient {
+    animation: pulseAmbient 2s ease-in-out infinite;
+  }
+  
+  .data-flow {
+    animation: dataFlow 4s linear infinite;
+  }
+  
+  @keyframes pulseAmbient {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes dataFlow {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer components {
+  /* Navigation Components */
+.nav-item  {
+    @apply flex items-center px-4 py-3 text-sm font-inter font-bold text-muted-foreground hover:text-primary rounded-lg transition-all duration-150 cursor-pointer;
+  }
+.nav-item.active  {
+    @apply text-primary neon-glow ;
+  }
+  
+  .nav-section {
+    @apply mb-6;
+  }
+  
+  .nav-section-title {
+    @apply text-xs font-inter font-bold text-muted-foreground uppercase tracking-wider mb-3 px-4;
+  }
+  
+  /* Status Indicators */
+  .status-indicator {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+.status-online  {
+    @apply text-success border;
+  }
+.status-warning  {
+    @apply text-warning border;
+  }
+.status-error  {
+    @apply text-error border;
+  }
+  
+  /* Interactive Elements */
+.interactive-hover  {
+    @apply transition-all duration-150 hover:scale-105;
+  }
+  
+  .filter-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-inter bg-muted text-muted-foreground border border-border hover:border-primary hover:text-primary transition-all duration-150 cursor-pointer;
+  }
+.filter-chip.active  {
+    @apply text-primary border-primary;
+  }
+}
+
+@layer utilities {
+  /* Spacing Utilities */
+  .sidebar-width {
+    width: 280px;
+  }
+  
+  .sidebar-collapsed {
+    width: 60px;
+  }
+  
+  .header-height {
+    height: 60px;
+  }
+  
+  .main-offset {
+    margin-top: 60px;
+    margin-left: 280px;
+  }
+  
+  .main-offset-collapsed {
+    margin-top: 60px;
+    margin-left: 60px;
+  }
+  
+  /* Responsive Utilities */
+  @media (max-width: 768px) {
+    .main-offset,
+    .main-offset-collapsed {
+      margin-left: 0;
+      margin-bottom: 60px;
+    }
+  }
+  
+  /* Z-Index Utilities */
+  .z-header {
+    z-index: 1000;
+  }
+  
+  .z-sidebar {
+    z-index: 900;
+  }
+  
+  .z-dropdown {
+    z-index: 1100;
+  }
+  
+  .z-modal {
+    z-index: 1200;
+  }
+}
